@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    implementation group: 'org.apache.spark', name: 'spark-core_2.12', version: '3.1.2'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.3'
+    implementation group: 'com.google.inject', name: 'guice', version: '5.0.1'
+    implementation group: 'org.jdbi', name: 'jdbi', version: '2.78'
+    implementation group: 'org.flywaydb', name: 'flyway-core', version: '7.10.0'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.25'
+
+}
+
+test {
+    useJUnitPlatform()
+}
